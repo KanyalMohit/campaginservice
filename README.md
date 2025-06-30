@@ -69,8 +69,6 @@ docker run --env-file .env -p 8080:8080 campaignservice
 ## Example Request
 
 ```
-GET /api/v1/delivery?app_id=123&country=US&os=android&page=1&limit=10
-```
 
 ## Screenshots
 
@@ -84,7 +82,12 @@ Below are example Prometheus metrics visualizations from the running service:
 
 ## Observability Improvements
 
+## DB Schema:
+![Screenshot 2025-06-17 at 4 54 49 PM](https://github.com/user-attachments/assets/f2d70357-229f-4c0b-81da-b019fa4e7f5d)
+
+
 The new codebase introduces several enhancements in monitoring and observability:
+
 
 - **Custom Metrics:**
   - `cpu_usage_percent` for real-time CPU usage tracking.
@@ -98,3 +101,7 @@ The new codebase introduces several enhancements in monitoring and observability
   - Expanded metrics such as `go_goroutines`, `go_memstats_*`, and `go_threads` for in-depth Go runtime insights.
 - **Improved Observability:**
   - These metrics provide comprehensive visibility into CPU, memory, database, and HTTP request performance, supporting better production monitoring and troubleshooting.
+
+### Note:<br>
+This repo is tested with Go 1.23.5 and Postgres 15.4. With a 30L+ records.
+
